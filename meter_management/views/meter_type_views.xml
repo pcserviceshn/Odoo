@@ -1,0 +1,44 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_meter_type_form">
+            <field name="name">Meter Type Form</field>
+            <field name="model">meter.type</field>
+            <field name="arch" type="xml">
+                <form string="Meter Type">
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="product_id"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_meter_type_tree">
+            <field name="name">Meter Type Tree</field>
+            <field name="model">meter.type</field>
+            <field name="arch" type="xml">
+                <tree string="Meter Type">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="product_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_meter_type">
+            <field name="name">Meter Type</field>
+            <field name="res_model">meter.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click here to create a new meter type record.
+                </p>
+           </field>
+        </record>
+
+	<menuitem id="menu_meter_type" name="Meter Type" parent="menu_root" sequence="30"/>
+        <menuitem id="menu_meter_type_list" name="Meter Type List" parent="menu_meter_type" action="action_meter_type" sequence="10"/>
+    </data>
+<odoo>

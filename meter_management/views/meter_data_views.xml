@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+        <record id="view_meter_data_form" model="ir.ui.view">
+            <field name="name">meter.data.form</field>
+            <field name="model">meter.data</field>
+            <field name="arch" type="xml">
+                <form string="Meter Data">
+                    <group>
+                        <field name="partner_id"/>
+                        <field name="meter_id"/>
+                        <field name="last_read"/>
+                        <field name="current_read"/>
+                        <field name="consumption"/>
+                        <field name="date"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+        <menuitem id="menu_meter_data" name="Meter Data" parent="menu_root" sequence="10"/>
+        <menuitem id="menu_meter_data_list" name="Meter Data List" parent="menu_meter_data" action="action_meter_data_list" sequence="10"/>
+        
+        <record id="action_meter_data_list" model="ir.actions.act_window">
+            <field name="name">Meter Data</field>
+            <field name="res_model">meter.data</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_meter_data_search"/>
+            <field name="context">{'search_default_date': 'today'}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click here to create a new meter data record.
+                </p>
+            </field>
+        </record>
+        <record id="view_meter_data_search" model="ir.ui.view">
+            <field name="name">meter.data.search</field>
+            <field name="model">meter.data</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="partner_id"/>
+                    <field name="meter_id"/>
+                    <field name="date"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>
+

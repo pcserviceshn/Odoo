@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_meter_definition_form">
+            <field name="name">Meter Definition Form</field>
+            <field name="model">meter.definition</field>
+            <field name="arch" type="xml">
+                <form string="Meter Definition">
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="meter_type_id"/>
+                        <field name="meter_id"/>
+                        <field name="partner_id"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_meter_definition_tree">
+            <field name="name">Meter Definition Tree</field>
+            <field name="model">meter.definition</field>
+            <field name="arch" type="xml">
+                <tree string="Meter Definition">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="meter_type_id"/>
+                    <field name="meter_id"/>
+                    <field name="partner_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_meter_definition">
+            <field name="name">Meter Definition</field>
+            <field name="res_model">meter.definition</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click here to create a new meter definition record.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_meter_definition" name="Meter Definition" parent="menu_root" sequence="20"/>
+        <menuitem id="menu_meter_definition_list" name="Meter Definition List" parent="menu_meter_definition" action="action_meter_definition" sequence="10"/>
+    </data>
+</odoo>
+

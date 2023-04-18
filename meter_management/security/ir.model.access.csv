@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_meter_type_user,Meter Type User,model_meter_type_user,base.group_user,1,0,0,0
+access_meter_type_manager,Meter Type Manager,model_meter_type_manager,base.group_user,1,1,1,1
+access_meter_definition_user,Meter Definition User,model_meter_definition_user,base.group_user,1,0,0,0
+access_meter_definition_manager,Meter Definition Manager,model_meter_definition_manager,base.group_user,1,1,1,1
+access_meter_data_user,Meter Data User,model_meter_data_user,base.group_user,1,0,0,0
+access_meter_data_manager,Meter Data Manager,model_meter_data_manager,base.group_user,1,1,1,1
